@@ -603,7 +603,7 @@ class configmanager(object):
         }
         p = ConfigParser.RawConfigParser()
         try:
-            p.read([self.rcfile])
+            p.read([self.rcfile],'utf-8')
             for (name,value) in p.items('options'):
                 name = outdated_options_map.get(name, name)
                 if value=='True' or value=='true':
